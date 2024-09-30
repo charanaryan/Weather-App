@@ -1,0 +1,236 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  
+  /* Body styles */
+  body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(forecast.jpg);
+    animation: bg-animation 5s infinite alternate;
+  }
+  
+  /* Container styles */
+  .container {
+    background-color: rgba(255, 255, 255, 0.444);
+    padding: 2rem;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+    transform: scale(0.95);
+    opacity: 0;
+    animation: fadeIn 1s ease-out forwards, pop 0.5s ease-out 1.2s forwards;
+  }
+
+  
+  /* Input form */
+  .form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  
+  input[type="text"] {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    flex: 1;
+    margin-right: 10px;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #5271ff;
+    box-shadow: 0 0 8px rgba(82, 113, 255, 0.5);
+  }
+  
+  button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    background-color: #5271ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    transform: translateY(0);
+  }
+  
+  button:hover {
+    background-color: #415bde;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(82, 113, 255, 0.3);
+  }
+  
+  /* Result section */
+  #result {
+    margin-top: 2rem;
+    opacity: 0;
+    animation: fadeIn 0.8s ease-out forwards ;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  h4.weather, h4.desc {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 1.2s ease-out forwards;
+  }
+  
+  img {
+    margin: 1rem 0;
+    animation: pulse 1.5s infinite;
+  }
+  
+  h1 {
+    font-size: 3rem;
+    color: #333;
+    animation: growTemp 0.7s ease forwards;
+  }
+  
+  /* Temperature container */
+  .temp-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .title {
+    font-size: 1rem;
+    color: #666;
+  }
+
+  .temp {
+    font-size: 1.5rem;
+    color: #333;
+    animation: slideInFromBottom 0.5s ease forwards;
+  }
+  
+  /* Message styles */
+  .msg {
+    color: red;
+    font-size: 1.2rem;
+    animation: shake 0.4s ease-in-out forwards;
+  }
+  
+  /* Animations */
+  
+  /* Background animation */
+  @keyframes bg-animation {
+    0% {
+      background-position: 0% 50%;
+    }
+    100% {
+      background-position: 100% 50%;
+    }
+  }
+  
+  /* Fade-in animation */
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  /* Pop-in effect for container */
+  @keyframes pop {
+    0% {
+      transform: scale(0.95);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* Slide-in from bottom */
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Slide-in heading */
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Temperature grow effect */
+  @keyframes growTemp {
+    0% {
+      font-size: 2rem;
+      opacity: 0;
+    }
+    100% {
+      font-size: 3rem;
+      opacity: 1;
+    }
+  }
+  
+  /* Pulse effect for weather icon */
+  @keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+  }
+  
+  /* Shake animation for error messages */
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-10px);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    75% {
+      transform: translateX(-10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  
