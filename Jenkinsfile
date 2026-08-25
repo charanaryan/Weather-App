@@ -4,10 +4,10 @@ pipeline {
     agent any
 
     stages {
-        stage("Hello"){
-            steps{
-                script{
-                 hello()   
+         stage("Hello") {
+            steps {
+                script {
+                    hello()
                 }
             }
         }
